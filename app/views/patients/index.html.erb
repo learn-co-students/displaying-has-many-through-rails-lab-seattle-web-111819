@@ -1,0 +1,12 @@
+<%# Create a Patient#index page that displays a link to each patient's show page 
+    and total number of appointments they have %>
+<!DOCTYPE html>
+  <h1>Patient Index:</h1>
+  <ul>
+    <% @patients.each do |pt|%>
+        <p>Name: <%= link_to pt.name, patient_path(pt)%> Number of Appointments:  <%= pluralize(pt.appointments.count, 'appointment')%> </p>
+    <%end%>
+  </ul>
+</html>
+
+

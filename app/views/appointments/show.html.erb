@@ -1,0 +1,10 @@
+<%# Create an Appointment#show page that shows the date, time, patient, and doctor for that particular appointment. 
+    Note that there should NOT be an Appointment#index page –– 
+    don't want to have all appointments on display for anyone to see. %>
+
+<!DOCTYPE html>
+  <h1>Appointment Information:</h1>
+    <p>Patient Name: <%=link_to @appointment.patient.name, patient_path(@appointment.patient)%></p>
+    <p>On: <%=@appointment.appointment_datetime.strftime("%B %d, %Y at %H:%M")%><br></p>
+    <p>Doctor: <%=link_to @appointment.doctor.name, doctor_path(@appointment.doctor)%></p>
+</html>
